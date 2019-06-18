@@ -66,6 +66,11 @@
     <Compile Include="Acciones\Entidades\ICursoMateriaAcciones.cs" />
     <Compile Include="Acciones\Entidades\IMateriaAction.cs" />
     <Compile Include="Acciones\Entidades\INotaAcciones.cs" />
+    <Compile Include="App_LocalResources\MensajesComunes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MensajesComunes.resx</DependentUpon>
+    </Compile>
     <Compile Include="DTO\EntidadesRepositorio\IAlumnoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoAlumnoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoDTO.cs" />
@@ -76,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Acciones\Comunes\" />
-    <Folder Include="App_LocalResources\" />
     <Folder Include="Clases\" />
     <Folder Include="DTO\Consultas\" />
     <Folder Include="DTO\EntidadesNegocio\" />
@@ -85,6 +89,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\MensajesComunes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MensajesComunes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
