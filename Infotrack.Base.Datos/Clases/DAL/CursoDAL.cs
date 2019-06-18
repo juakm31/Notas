@@ -3,6 +3,7 @@ using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Transaccional.EF.Clases;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
 using System;
+using System.Linq;
 
 namespace Infotrack.Base.Datos.Clases.DAL
 {
