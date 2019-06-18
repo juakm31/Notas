@@ -63,10 +63,15 @@
   <ItemGroup>
     <Compile Include="Acciones\Entidades\IAlumnoAction.cs" />
     <Compile Include="Acciones\Entidades\ICursoAction.cs" />
+    <Compile Include="Acciones\Entidades\ICursoMateriaAcciones.cs" />
     <Compile Include="Acciones\Entidades\IMateriaAction.cs" />
+    <Compile Include="Acciones\Entidades\INotaAcciones.cs" />
     <Compile Include="DTO\EntidadesRepositorio\IAlumnoDTO.cs" />
+    <Compile Include="DTO\EntidadesRepositorio\ICursoAlumnoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoDTO.cs" />
+    <Compile Include="DTO\EntidadesRepositorio\ICursoMateriaDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\IMateriaDTO.cs" />
+    <Compile Include="DTO\EntidadesRepositorio\INotaDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

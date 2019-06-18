@@ -3,17 +3,14 @@ using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Transaccional.EF.Clases;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infotrack.Base.Datos.Clases.DAL
 {
     public class AlumnoDAL : AccesoComunDAL<DatosContexto>, IAlumnoAction
     {
-        Respuesta<IAlumnoDTO> Respuesta;
-        RepositorioGenerico<Alumno> Repositorio;
+        private Respuesta<IAlumnoDTO> Respuesta;
+        private RepositorioGenerico<Alumno> Repositorio;
 
         public AlumnoDAL()
         {
