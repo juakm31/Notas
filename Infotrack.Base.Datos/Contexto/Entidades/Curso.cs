@@ -9,6 +9,14 @@ namespace Infotrack.Base.Datos
     [Table("Curso")]
     public partial class Curso
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Curso()
+        {
+            CursoAlumno = new HashSet<CursoAlumno>();
+            CursoMateria = new HashSet<CursoMateria>();
+            Nota = new HashSet<Nota>();
+        }
+
         [Key]
         public int Id_Curso { get; set; }
 
@@ -17,5 +25,14 @@ namespace Infotrack.Base.Datos
 
         [StringLength(20)]
         public string Estado { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CursoAlumno> CursoAlumno { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CursoMateria> CursoMateria { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Nota> Nota { get; set; }
     }
 }

@@ -63,17 +63,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexto\Entidades\Alumno.cs" />
     <Compile Include="Clases\DAL\AlumnoDAL.cs" />
     <Compile Include="Clases\DAL\CursoDAL.cs" />
     <Compile Include="Clases\DAL\MateriaDAL.cs" />
     <Compile Include="Clases\DO\AlumnoDO.cs" />
     <Compile Include="Clases\DO\CursoDO.cs" />
     <Compile Include="Clases\DO\MateriaDO.cs" />
-    <Compile Include="Contexto\Entidades\Alumno.cs" />
     <Compile Include="Contexto\Entidades\Curso.cs" />
-    <Compile Include="Contexto\Entidades\Materia.cs" />
+    <Compile Include="Contexto\Entidades\CursoAlumno.cs" />
+    <Compile Include="Contexto\Entidades\CursoMateria.cs" />
     <Compile Include="DatosContexto.cs" />
     <Compile Include="DatosContextoPartial.cs" />
+    <Compile Include="Contexto\Entidades\Materia.cs" />
+    <Compile Include="Contexto\Entidades\Nota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +91,9 @@
       <Project>{a52b7c8f-1cc8-4dcb-96d0-b304b2e62e67}</Project>
       <Name>Infotrack.Base.IC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

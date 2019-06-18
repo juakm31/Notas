@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infotrack.Base.IC.Acciones.Entidades
 {
-    interface ICursoAction
+    public interface ICursoAction
     {
         Respuesta<ICursoDTO> ConsultarCursos();
         Respuesta<ICursoDTO> ConsultarCursoId(int id);

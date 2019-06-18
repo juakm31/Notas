@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infotrack.Base.IC.Acciones.Entidades
 {
-    interface IMateriaAction
+    public interface IMateriaAction
     {
         Respuesta<IMateriaDTO> ConsultarMaterias();
         Respuesta<IMateriaDTO> ConsultarMateriaId(int id);
