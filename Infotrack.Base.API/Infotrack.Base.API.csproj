@@ -213,6 +213,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AlumnoesController.cs" />
+    <Compile Include="Controllers\CursoAlumnoesController.cs" />
+    <Compile Include="Controllers\CursoeController.cs" />
+    <Compile Include="Controllers\CursoMateriasController.cs" />
+    <Compile Include="Controllers\MateriasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,7 +235,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
