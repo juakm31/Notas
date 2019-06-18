@@ -53,6 +53,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,11 +62,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\BL\AlumnoBL.cs" />
+    <Compile Include="Clases\BL\CursoBL.cs" />
+    <Compile Include="Clases\BL\MateriaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_LocalResources\" />
-    <Folder Include="Clases\BL\" />
     <Folder Include="Clases\BO\EntidadesNegocio\" />
     <Folder Include="Clases\BO\EntidadesRepositorio\" />
   </ItemGroup>
