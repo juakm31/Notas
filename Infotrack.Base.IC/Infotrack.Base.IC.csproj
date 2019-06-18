@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Acciones\Entidades\IAlumnoAction.cs" />
     <Compile Include="Acciones\Entidades\ICursoAction.cs" />
+    <Compile Include="Acciones\Entidades\ICursoAlumnoAcciones.cs" />
     <Compile Include="Acciones\Entidades\ICursoMateriaAcciones.cs" />
     <Compile Include="Acciones\Entidades\IMateriaAction.cs" />
     <Compile Include="Acciones\Entidades\INotaAcciones.cs" />
