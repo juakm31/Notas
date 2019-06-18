@@ -61,16 +61,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acciones\Entidades\IAlumnoAction.cs" />
+    <Compile Include="Acciones\Entidades\ICursoAction.cs" />
+    <Compile Include="Acciones\Entidades\IMateriaAction.cs" />
+    <Compile Include="DTO\EntidadesRepositorio\IAlumnoDTO.cs" />
+    <Compile Include="DTO\EntidadesRepositorio\ICursoDTO.cs" />
+    <Compile Include="DTO\EntidadesRepositorio\IMateriaDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Acciones\Comunes\" />
-    <Folder Include="Acciones\Entidades\" />
     <Folder Include="App_LocalResources\" />
     <Folder Include="Clases\" />
     <Folder Include="DTO\Consultas\" />
     <Folder Include="DTO\EntidadesNegocio\" />
-    <Folder Include="DTO\EntidadesRepositorio\" />
     <Folder Include="Enumeraciones\" />
   </ItemGroup>
   <ItemGroup>
