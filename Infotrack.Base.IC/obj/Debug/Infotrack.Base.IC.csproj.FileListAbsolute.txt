@@ -1,0 +1,6 @@
+C:\Users\JAIRJAP\source\repos\ArquitectureTwo\Infotrack.Base.IC\bin\Debug\Infotrack.Base.IC.dll
+C:\Users\JAIRJAP\source\repos\ArquitectureTwo\Infotrack.Base.IC\bin\Debug\Infotrack.Base.IC.pdb
+C:\Users\JAIRJAP\source\repos\ArquitectureTwo\Infotrack.Base.IC\obj\Debug\Infotrack.Base.IC.csprojAssemblyReference.cache
+C:\Users\JAIRJAP\source\repos\ArquitectureTwo\Infotrack.Base.IC\obj\Debug\Infotrack.Base.IC.csproj.CoreCompileInputs.cache
+C:\Users\JAIRJAP\source\repos\ArquitectureTwo\Infotrack.Base.IC\obj\Debug\Infotrack.Base.IC.dll
+C:\Users\JAIRJAP\source\repos\ArquitectureTwo\Infotrack.Base.IC\obj\Debug\Infotrack.Base.IC.pdb
