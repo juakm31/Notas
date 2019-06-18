@@ -25,8 +25,8 @@ namespace Infotrack.Base.Datos.Clases.DAL
         {
             return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() =>
             {
-                Alumno familias = (Repositorio.BuscarPor(entidad => entidad.Id_Alumno == alumnoDTO.Id_Alumno).FirstOrDefault());
-                Repositorio.Editar(familias);
+                Alumno alumno = (Repositorio.BuscarPor(entidad => entidad.Id_Alumno == alumnoDTO.Id_Alumno).FirstOrDefault());
+                Repositorio.Editar(alumno);
                 Repositorio.Guardar();
                 Respuesta.Mensajes.Add(MensajesComunes.EliminacionExitosa);
                 return Respuesta;
@@ -37,13 +37,15 @@ namespace Infotrack.Base.Datos.Clases.DAL
         {
             return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() =>
             {
-                Familias familias = new Familias
+                Alumno alumno = new Alumno
                 {
-                    FamiliaId = familiasDTO.FamiliaId,
-                    FamiliaDescripcion = familiasDTO.FamiliaDescripcion,
-                    EmpresaId = familiasDTO.EmpresaId
+                    Id_Alumno = alumnoDTO.Id_Alumno,
+                    Nombre = alumnoDTO.Nombre,
+                    Apellido = alumnoDTO.Apellido,
+                    Correo = alumnoDTO.Correo,
+                    Estado = alumnoDTO.Estado
                 };
-                Repositorio.Agregar(familias);
+                Repositorio.Agregar(alumno);
                 Repositorio.Guardar();
                 return Respuesta;
             });
@@ -51,17 +53,33 @@ namespace Infotrack.Base.Datos.Clases.DAL
 
         public Respuesta<IAlumnoDTO> ConsultarAlumnoId(int id)
         {
-            throw new NotImplementedException();
+            return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() =>
+            {
+
+                Respuesta.Entidades = Repositorio.BuscarPor(entidad => entidad.Id_Alumno == id).ToList<IAlumnoDTO>();
+                return Respuesta;
+            });
         }
 
         public Respuesta<IAlumnoDTO> ConsultarAlumnos()
         {
-            throw new NotImplementedException();
+            return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() =>
+            {
+                Respuesta.Entidades = Repositorio.BuscarTodos().ToList<IAlumnoDTO>();
+                return Respuesta;
+
+            });
         }
 
         public Respuesta<IAlumnoDTO> EliminarAlumno(IAlumnoDTO alumnoDTO)
         {
-            throw new NotImplementedException();
+            return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() => {
+                Alumno alumno = (Repositorio.BuscarPor(entidad => entidad.Id_Alumno == alumnoDTO.Id_Alumno).FirstOrDefault());
+                Repositorio.Eliminar(alumno);
+                Repositorio.Guardar();
+                Respuesta.Mensajes.Add(MensajesComunes.EliminacionExitosa);
+                return Respuesta;
+            });
         }
     }
 }
