@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\DAL\CursoAlumnoDAL.cs" />
+    <Compile Include="Clases\DAL\CursoMateriaDAL.cs" />
+    <Compile Include="Clases\DAL\NotasDAL.cs" />
+    <Compile Include="Clases\DO\CursoAlumnoDO.cs" />
+    <Compile Include="Clases\DO\CursoMateriaDO.cs" />
+    <Compile Include="Clases\DO\Notas.cs" />
     <Compile Include="Contexto\Entidades\Alumno.cs" />
     <Compile Include="Clases\DAL\AlumnoDAL.cs" />
     <Compile Include="Clases\DAL\CursoDAL.cs" />

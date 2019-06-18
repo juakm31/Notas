@@ -1,7 +1,9 @@
 ﻿using Infotrack.Base.IC.Acciones.Entidades;
+using Infotrack.Base.IC.App_LocalResources;
 using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Transaccional.EF.Clases;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
+using Infotrack.Utilitarios.Clases.Mapeador.Extensiones;
 using System;
 using System.Linq;
 
@@ -34,14 +36,15 @@ namespace Infotrack.Base.Datos.Clases.DAL
         {
             return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() =>
             {
-                Alumno alumno = new Alumno
-                {
-                    Id_Alumno = alumnoDTO.Id_Alumno,
-                    Nombre = alumnoDTO.Nombre,
-                    Apellido = alumnoDTO.Apellido,
-                    Correo = alumnoDTO.Correo,
-                    Estado = alumnoDTO.Estado
-                };
+                Alumno alumno = Mapeador.MapearEntidadDTO(alumnoDTO, new Alumno());
+                //Alumno alumno = new Alumno
+                //{
+                //    Id_Alumno = alumnoDTO.Id_Alumno,
+                //    Nombre = alumnoDTO.Nombre,
+                //    Apellido = alumnoDTO.Apellido,
+                //    Correo = alumnoDTO.Correo,
+                //    Estado = alumnoDTO.Estado
+                //};
                 Repositorio.Agregar(alumno);
                 Repositorio.Guardar();
                 return Respuesta;

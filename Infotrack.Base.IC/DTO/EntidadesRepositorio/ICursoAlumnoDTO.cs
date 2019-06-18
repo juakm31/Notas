@@ -8,8 +8,8 @@
 
         int Id_Curso { get; set; }
 
-        IAlumnoDTO Alumno { get; set; }
+        //IAlumnoDTO Alumno { get; set; }
 
-        ICursoDTO Curso { get; set; }
+        //ICursoDTO Curso { get; set; }
     }
 }

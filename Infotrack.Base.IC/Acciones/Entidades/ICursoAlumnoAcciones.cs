@@ -5,14 +5,14 @@ namespace Infotrack.Base.IC.Acciones.Entidades
 {
     public interface ICursoAlumnoAcciones
     {
-        Respuesta<ICursoAlumnoDTO> AgregarNota(ICursoAlumnoDTO cursoAlumnoDTO);
+        Respuesta<ICursoAlumnoDTO> AgregarCursoAlumno(ICursoAlumnoDTO cursoAlumnoDTO);
 
-        Respuesta<ICursoAlumnoDTO> ActualizarNota(ICursoAlumnoDTO cursoAlumnoDTO);
+        Respuesta<ICursoAlumnoDTO> ActualizarCursoAlumno(ICursoAlumnoDTO cursoAlumnoDTO);
 
-        Respuesta<ICursoAlumnoDTO> EliminarNotaPorID(int idcursoAlumno);
+        Respuesta<ICursoAlumnoDTO> EliminarCursoAlumnoPorID(int idcursoAlumno);
 
-        Respuesta<ICursoAlumnoDTO> ConsultarNotas();
+        Respuesta<ICursoAlumnoDTO> ConsultarCursoAlumno();
 
-        Respuesta<ICursoAlumnoDTO> ConsultarNotaPorID(int idcursoAlumno);
+        Respuesta<ICursoAlumnoDTO> ConsultarCursoAlumnoPorID(int idcursoAlumno);
     }
 }

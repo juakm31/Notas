@@ -12,10 +12,10 @@
 
         double Nota1 { get; set; }
 
-        IAlumnoDTO Alumno { get; set; }
+        //IAlumnoDTO Alumno { get; set; }
 
-        ICursoDTO Curso { get; set; }
+        //ICursoDTO Curso { get; set; }
 
-        IMateriaDTO Materia { get; set; }
+        //IMateriaDTO Materia { get; set; }
     }
 }
