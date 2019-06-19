@@ -54,9 +54,9 @@ namespace Infotrack.Base.Datos.Clases.DAL
         public Respuesta<IAlumnoDTO> ConsultarAlumnoId(int id)
         {
             return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() =>
-            {
-
+            {            
                 Respuesta.Entidades = Repositorio.BuscarPor(entidad => entidad.Id_Alumno == id).ToList<IAlumnoDTO>();
+                Respuesta.Mensajes.Add(MensajesComunes.RegistroObtenido);
                 return Respuesta;
             });
         }
@@ -66,8 +66,8 @@ namespace Infotrack.Base.Datos.Clases.DAL
             return EjecutarTransaccion<Respuesta<IAlumnoDTO>, AlumnoDAL>(() =>
             {
                 Respuesta.Entidades = Repositorio.BuscarTodos().ToList<IAlumnoDTO>();
+                Respuesta.Mensajes.Add(MensajesComunes.RegistrosObtenidos);
                 return Respuesta;
-
             });
         }
 

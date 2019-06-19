@@ -1,15 +1,18 @@
-﻿using Infotrack.Base.IC.Acciones.Entidades;
+﻿using Infotrack.Base.Datos.Clases.DO;
+using Infotrack.Base.IC.Acciones.Entidades;
 using Infotrack.Base.IC.App_LocalResources;
+using Infotrack.Base.IC.DTO.Consultas;
 using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Transaccional.EF.Clases;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
 using Infotrack.Utilitarios.Clases.Mapeador.Extensiones;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Infotrack.Base.Datos.Clases.DAL
 {
-    internal class CursoDAL : AccesoComunDAL<DatosContexto>, ICursoAction
+    public class CursoDAL : AccesoComunDAL<DatosContexto>, ICursoAction
     {
         private Respuesta<ICursoDTO> Respuesta;
         private RepositorioGenerico<Curso> Repositorio;
@@ -78,6 +81,84 @@ namespace Infotrack.Base.Datos.Clases.DAL
                 Respuesta.Mensajes.Add(MensajesComunes.EliminacionExitosa);
                 return Respuesta;
             });
+        }
+
+        public Respuesta<IMateriaPorCursoDTO> ObtenerMateriasPorCurso()
+        {
+            return EjecutarTransaccion<Respuesta<IMateriaPorCursoDTO>, CursoDAL>(() =>
+            {
+                Respuesta<IMateriaPorCursoDTO> respuestaMateriasCurso = new Respuesta<IMateriaPorCursoDTO>();
+
+                respuestaMateriasCurso.Entidades = (from cm in ContextoBD.CursoMateria
+                                                           join c in ContextoBD.Curso on cm.Id_Curso equals c.Id_Curso
+                                                           join m in ContextoBD.Materia on cm.Id_Materia equals m.Id_Materia
+                                                            group m.Nombre by c.Nombre into g
+                                                            select new MateriasPorCursoDO
+                                                           {
+                                                               NombreCurso = g.Key,
+                                                               ListaMaterias = g.ToList()
+                                                           }).ToList<IMateriaPorCursoDTO>();
+
+                return respuestaMateriasCurso;
+            });
+        }
+
+        public Respuesta<IMateriaPorCursoDTO> ObtenerMateriasPorIdCurso(int id)
+        {
+            return EjecutarTransaccion<Respuesta<IMateriaPorCursoDTO>, CursoDAL>(() =>
+            {
+                Respuesta<IMateriaPorCursoDTO> respuestaMateriasCurso = new Respuesta<IMateriaPorCursoDTO>();
+
+                respuestaMateriasCurso.Entidades = (from cm in ContextoBD.CursoMateria
+                           join c in ContextoBD.Curso on cm.Id_Curso equals c.Id_Curso
+                           join m in ContextoBD.Materia on cm.Id_Materia equals m.Id_Materia
+                           where c.Id_Curso == id
+                           group m.Nombre by c.Nombre into g
+                           select new MateriasPorCursoDO
+                           {
+                               NombreCurso = g.Key,
+                               ListaMaterias = g.ToList()
+                           }).ToList<IMateriaPorCursoDTO>();
+                return respuestaMateriasCurso;
+            });
+        }
+
+        public Respuesta<IAlumnoPorCursoDTO> ObtenerAlumnosPorCurso()
+        {
+            return EjecutarTransaccion<Respuesta<IAlumnoPorCursoDTO>, CursoDAL>(() =>
+            {
+                Respuesta<IAlumnoPorCursoDTO> respuestaAlumnoMateria = new Respuesta<IAlumnoPorCursoDTO>();
+
+                respuestaAlumnoMateria.Entidades = (from ca in ContextoBD.CursoAlumno
+                                                    join a in ContextoBD.Alumno on ca.Id_Alumno equals a.Id_Alumno
+                                                    join c in ContextoBD.Curso on ca.Id_Curso equals c.Id_Curso
+                                                    group a.Nombre by c.Nombre into g
+                                                    select new AlumnosPorCurso
+                                                    {
+                                                        NombreCurso = g.Key,
+                                                        ListAlumnos = g.ToList()
+                                                    }).ToList<IAlumnoPorCursoDTO>();
+
+                return respuestaAlumnoMateria;
+            });
+        }
+
+        public Respuesta<IAlumnoPorCursoDTO> ObtenerAlumnosPorIdCurso(int id)
+        {
+            Respuesta<IAlumnoPorCursoDTO> respuestaAlumnoMateria = new Respuesta<IAlumnoPorCursoDTO>();
+
+            respuestaAlumnoMateria.Entidades = (from ca in ContextoBD.CursoAlumno
+                                                join a in ContextoBD.Alumno on ca.Id_Alumno equals a.Id_Alumno
+                                                join c in ContextoBD.Curso on ca.Id_Curso equals c.Id_Curso
+                                                where c.Id_Curso == id
+                                                group a.Nombre by c.Nombre into g
+                                                select new AlumnosPorCurso
+                                                {
+                                                    NombreCurso = g.Key,
+                                                    ListAlumnos = g.ToList()
+                                                }).ToList<IAlumnoPorCursoDTO>();
+
+            return respuestaAlumnoMateria;
         }
     }
 }

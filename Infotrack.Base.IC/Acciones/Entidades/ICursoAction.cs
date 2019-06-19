@@ -1,4 +1,5 @@
-﻿using Infotrack.Base.IC.DTO.EntidadesRepositorio;
+﻿using Infotrack.Base.IC.DTO.Consultas;
+using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
 
 namespace Infotrack.Base.IC.Acciones.Entidades
@@ -14,5 +15,9 @@ namespace Infotrack.Base.IC.Acciones.Entidades
         Respuesta<ICursoDTO> ActualizarCurso(ICursoDTO cursoDTO);
 
         Respuesta<ICursoDTO> EliminarCurso(ICursoDTO cursoDTO);
+        Respuesta<IMateriaPorCursoDTO> ObtenerMateriasPorCurso();
+        Respuesta<IMateriaPorCursoDTO> ObtenerMateriasPorIdCurso(int id);
+        Respuesta<IAlumnoPorCursoDTO> ObtenerAlumnosPorCurso();
+        Respuesta<IAlumnoPorCursoDTO> ObtenerAlumnosPorIdCurso(int id);
     }
 }

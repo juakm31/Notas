@@ -121,9 +121,15 @@
     <value>Se ha actualizado el registro correctamente</value>
   </data>
   <data name="EliminacionExitosa" xml:space="preserve">
-    <value>Se ha eliminado el registro exitosamente</value>
+    <value>Se ha eliminado el registro correctamente</value>
   </data>
   <data name="MensajeCreacionExitosa" xml:space="preserve">
     <value>Se ha agregado el registro correctamente</value>
+  </data>
+  <data name="RegistroObtenido" xml:space="preserve">
+    <value>Se ha obtenido el registro correctamente</value>
+  </data>
+  <data name="RegistrosObtenidos" xml:space="preserve">
+    <value>Se han obtenido los registros correctamente</value>
   </data>
 </root>

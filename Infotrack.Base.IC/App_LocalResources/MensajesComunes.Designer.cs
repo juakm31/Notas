@@ -70,7 +70,7 @@ namespace Infotrack.Base.IC.App_LocalResources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Se ha eliminado el registro exitosamente.
+        ///   Busca una cadena traducida similar a Se ha eliminado el registro correctamente.
         /// </summary>
         public static string EliminacionExitosa {
             get {
@@ -84,6 +84,24 @@ namespace Infotrack.Base.IC.App_LocalResources {
         public static string MensajeCreacionExitosa {
             get {
                 return ResourceManager.GetString("MensajeCreacionExitosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se ha obtenido el registro correctamente.
+        /// </summary>
+        public static string RegistroObtenido {
+            get {
+                return ResourceManager.GetString("RegistroObtenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se han obtenido los registros correctamente.
+        /// </summary>
+        public static string RegistrosObtenidos {
+            get {
+                return ResourceManager.GetString("RegistrosObtenidos", resourceCulture);
             }
         }
     }

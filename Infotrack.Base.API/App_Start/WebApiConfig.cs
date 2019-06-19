@@ -6,9 +6,10 @@ namespace Infotrack.Base.API
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
+            //config.MessageHandlers.Add(new ValidadorJwt());
+            //Configuración y servicios de API web
+            config.EnableCors();
+            // Rutas de API web
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

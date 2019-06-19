@@ -3,7 +3,7 @@
     public partial class DatosContexto
     {
         public DatosContexto()
-            : base("name=ContextoBase")
+            : base("name=DatosContexto")
         {
         }
     }

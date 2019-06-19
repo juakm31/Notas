@@ -223,6 +223,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Alumno.cs" />
+    <Compile Include="Models\Curso.cs" />
+    <Compile Include="Models\CursoAlumno.cs" />
+    <Compile Include="Models\CursoMateria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

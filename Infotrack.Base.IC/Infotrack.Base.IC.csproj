@@ -72,18 +72,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MensajesComunes.resx</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Consultas\IAlumnoPorCursoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\IAlumnoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoAlumnoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoMateriaDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\IMateriaDTO.cs" />
+    <Compile Include="DTO\Consultas\IMateriaPorCursoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\INotaDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Acciones\Comunes\" />
     <Folder Include="Clases\" />
-    <Folder Include="DTO\Consultas\" />
     <Folder Include="DTO\EntidadesNegocio\" />
     <Folder Include="Enumeraciones\" />
   </ItemGroup>

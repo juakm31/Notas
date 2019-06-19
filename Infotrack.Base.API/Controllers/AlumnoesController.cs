@@ -15,40 +15,37 @@ using Infotrack.Base.Datos.Clases.DAL;
 using Infotrack.Base.IC.Acciones.Entidades;
 using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Base.Negocio.Clases.BL;
+using Infotrack.Utilitarios.API.Clases.Ejecucion;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
 using Infotrack.Utilitarios.Clases.Mapeador.Extensiones;
-using Alumno = Infotrack.Base.API.Models.Alumno;
 
 namespace Infotrack.Base.API.Controllers
 {
-    public class AlumnoesController : ApiController
+    [RoutePrefix("api/Alumno")]
+    public class AlumnoesController : AccesoComunAPI
     {
-        private DatosContexto db = new DatosContexto();
-
         private Lazy<AlumnoBL> NegocioAlumno;
         public AlumnoesController()
         {
             NegocioAlumno = new Lazy<AlumnoBL>(() => new AlumnoBL(new Lazy<IAlumnoAction>(() => new AlumnoDAL())));
         }
 
+        [HttpGet]
+        [Route("ConsultarListaAlumnos")]
         // GET: api/Alumnoes
-        public Respuesta<Alumno> GetAlumno()
+        public Respuesta<Datos.Alumno> GetAlumno()
         {
-            return Mapeador.MapearObjetoPorJson<Respuesta<Alumno>>(NegocioAlumno.Value.ConsultarAlumnos());
+            return Mapeador.MapearObjetoPorJson<Respuesta<Datos.Alumno>>(NegocioAlumno.Value.ConsultarAlumnos());
         }
 
-        //// GET: api/Alumnoes/5
-        //[ResponseType(typeof(Alumno))]
-        //public async Task<IHttpActionResult> GetAlumno(int id)
-        //{
-        //    Alumno alumno = await db.Alumno.FindAsync(id);
-        //    if (alumno == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return Ok(alumno);
-        //}
+        [HttpGet]
+        [Route("ConsultarListaAlumnosId")]
+        // GET: api/Alumnoes/5
+        // [ResponseType(typeof(Alumno))]
+        public Respuesta<Datos.Alumno> GetAlumno(int id)
+        {
+            return Mapeador.MapearObjetoPorJson<Respuesta<Datos.Alumno>>(NegocioAlumno.Value.ConsultarAlumnoId(id));
+        }
 
         //// PUT: api/Alumnoes/5
         //[ResponseType(typeof(void))]

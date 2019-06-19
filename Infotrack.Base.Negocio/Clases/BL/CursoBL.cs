@@ -1,4 +1,5 @@
 ﻿using Infotrack.Base.IC.Acciones.Entidades;
+using Infotrack.Base.IC.DTO.Consultas;
 using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Transaccional.EF.Clases;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
@@ -58,6 +59,37 @@ namespace Infotrack.Base.Negocio.Clases.BL
             return EjecutarTransaccionBD<Respuesta<ICursoDTO>, CursoBL>(System.Transactions.IsolationLevel.ReadUncommitted, () =>
             {
                 return RepositorioCurso.Value.EliminarCurso(cursoDTO);
+            });
+        }
+        public Respuesta<IMateriaPorCursoDTO> ObtenerMateriasPorCurso()
+        {
+            return EjecutarTransaccionBD<Respuesta<IMateriaPorCursoDTO>, CursoBL>(System.Transactions.IsolationLevel.ReadUncommitted, () =>
+            {
+                return RepositorioCurso.Value.ObtenerMateriasPorCurso();
+            });
+        }
+
+        public Respuesta<IMateriaPorCursoDTO> ObtenerMateriasPorIdCurso(int id)
+        {
+            return EjecutarTransaccionBD<Respuesta<IMateriaPorCursoDTO>, CursoBL>(System.Transactions.IsolationLevel.ReadUncommitted, () =>
+            {
+                return RepositorioCurso.Value.ObtenerMateriasPorIdCurso(id);
+            });
+        }
+
+        public Respuesta<IAlumnoPorCursoDTO> ObtenerAlumnosPorCurso()
+        {
+            return EjecutarTransaccionBD<Respuesta<IAlumnoPorCursoDTO>, CursoBL>(System.Transactions.IsolationLevel.ReadUncommitted, () =>
+            {
+                return RepositorioCurso.Value.ObtenerAlumnosPorCurso();
+            });
+        }
+
+        public Respuesta<IAlumnoPorCursoDTO> ObtenerAlumnosPorIdCurso(int id)
+        {
+            return EjecutarTransaccionBD<Respuesta<IAlumnoPorCursoDTO>, CursoBL>(System.Transactions.IsolationLevel.ReadUncommitted, () =>
+            {
+                return RepositorioCurso.Value.ObtenerAlumnosPorIdCurso(id);
             });
         }
     }
