@@ -45,7 +45,7 @@ namespace Infotrack.Base.Negocio.Clases.BL
         {
             return EjecutarTransaccionBD<Respuesta<IAlumnoDTO>, AlumnoBL>(System.Transactions.IsolationLevel.ReadUncommitted, () =>
             {
-                return RepositorioAlumno.Value.ConsultarAlumnos();
+                 return RepositorioAlumno.Value.ConsultarAlumnos();
             });
         }
 

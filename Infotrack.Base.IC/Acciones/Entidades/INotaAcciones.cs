@@ -1,4 +1,5 @@
-﻿using Infotrack.Base.IC.DTO.EntidadesRepositorio;
+﻿using Infotrack.Base.IC.DTO.Consultas;
+using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
 
 namespace Infotrack.Base.IC.Acciones.Entidades
@@ -14,5 +15,7 @@ namespace Infotrack.Base.IC.Acciones.Entidades
         Respuesta<INotaDTO> ConsultarNotas();
 
         Respuesta<INotaDTO> ConsultarNotaPorID(int idNota);
+
+        Respuesta<IFiltroNotaDTO> FiltroNota(INotaDTO notaDTO);
     }
 }

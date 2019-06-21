@@ -67,6 +67,7 @@
     <Compile Include="Clases\BL\CursoMateriaBL.cs" />
     <Compile Include="Clases\BL\MateriaBL.cs" />
     <Compile Include="Clases\BL\CursoAlumnoBL.cs" />
+    <Compile Include="Clases\BL\NotaBL.cs" />
     <Compile Include="Clases\BO\EntidadesRepositorio\AlumnoBO.cs" />
     <Compile Include="Clases\BO\EntidadesRepositorio\CursoAlumnoBO.cs" />
     <Compile Include="Clases\BO\EntidadesRepositorio\CursoBO.cs" />

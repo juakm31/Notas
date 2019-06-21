@@ -73,6 +73,7 @@
       <DependentUpon>MensajesComunes.resx</DependentUpon>
     </Compile>
     <Compile Include="DTO\Consultas\IAlumnoPorCursoDTO.cs" />
+    <Compile Include="DTO\Consultas\IFiltroNotaDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\IAlumnoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoAlumnoDTO.cs" />
     <Compile Include="DTO\EntidadesRepositorio\ICursoDTO.cs" />

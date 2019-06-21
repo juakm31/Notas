@@ -219,6 +219,7 @@
     <Compile Include="Controllers\CursoeController.cs" />
     <Compile Include="Controllers\CursoMateriasController.cs" />
     <Compile Include="Controllers\MateriasController.cs" />
+    <Compile Include="Controllers\NotasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,6 +227,8 @@
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\CursoAlumno.cs" />
     <Compile Include="Models\CursoMateria.cs" />
+    <Compile Include="Models\FiltroNota.cs" />
+    <Compile Include="Models\Nota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

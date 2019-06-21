@@ -33,9 +33,9 @@ namespace Infotrack.Base.API.Controllers
         [HttpGet]
         [Route("ConsultarListaAlumnos")]
         // GET: api/Alumnoes
-        public Respuesta<Datos.Alumno> GetAlumno()
+        public Respuesta<Models.Alumno> GetAlumno()
         {
-            return Mapeador.MapearObjetoPorJson<Respuesta<Datos.Alumno>>(NegocioAlumno.Value.ConsultarAlumnos());
+            return Mapeador.MapearObjetoPorJson<Respuesta<Models.Alumno>>(NegocioAlumno.Value.ConsultarAlumnos());
         }
 
         [HttpGet]

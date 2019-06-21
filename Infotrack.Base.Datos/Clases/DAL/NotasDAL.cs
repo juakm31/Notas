@@ -1,5 +1,7 @@
-﻿using Infotrack.Base.IC.Acciones.Entidades;
+﻿using Infotrack.Base.Datos.Clases.DO;
+using Infotrack.Base.IC.Acciones.Entidades;
 using Infotrack.Base.IC.App_LocalResources;
+using Infotrack.Base.IC.DTO.Consultas;
 using Infotrack.Base.IC.DTO.EntidadesRepositorio;
 using Infotrack.Transaccional.EF.Clases;
 using Infotrack.Utilitarios.Clases.Comunes.Entidades;
@@ -77,6 +79,33 @@ namespace Infotrack.Base.Datos.Clases.DAL
                 RepositorioNotas.Guardar();
                 Respuesta.Mensajes.Add(MensajesComunes.EliminacionExitosa);
                 return Respuesta;
+            });
+        }
+
+        public Respuesta<IFiltroNotaDTO> FiltroNota(INotaDTO notaDTO)
+        {
+            return EjecutarTransaccion<Respuesta<IFiltroNotaDTO>, NotasDAL>(() =>
+            {
+                Respuesta<IFiltroNotaDTO> respuestaFiltro = new Respuesta<IFiltroNotaDTO>();
+                respuestaFiltro.Entidades = (from nota in ContextoBD.Nota
+                                       join curso in ContextoBD.Curso on nota.Id_Curso equals curso.Id_Curso
+                                       join materia in ContextoBD.Materia on nota.Id_Materia equals materia.Id_Materia
+                                       join alumno in ContextoBD.Alumno on nota.Id_Alumno equals alumno.Id_Alumno
+                                       where notaDTO.Id_Curso > 0 ? curso.Id_Curso == notaDTO.Id_Curso : true
+                                       where notaDTO.Id_Materia > 0 ? materia.Id_Materia == notaDTO.Id_Materia :  true
+                                       where notaDTO.Id_Alumno > 0 ? alumno.Id_Alumno == notaDTO.Id_Alumno : true
+                                       select new FiltroNotaDO {
+                                           IdCurso = curso.Id_Curso,
+                                           IdMateria = materia.Id_Materia,
+                                           IdAlumno = alumno.Id_Alumno,
+                                           NombreCurso = curso.Nombre,
+                                           NombreMateria = materia.Nombre,
+                                           NombreAlumno = alumno.Nombre + " " + alumno.Apellido,
+                                           correo = alumno.Correo,
+                                           Nota = nota.Nota1 + ""
+                                       }).ToList<IFiltroNotaDTO>();
+
+                return respuestaFiltro;
             });
         }
     }

@@ -69,6 +69,7 @@
     <Compile Include="Clases\DO\AlumnosPorCurso.cs" />
     <Compile Include="Clases\DO\CursoAlumnoDO.cs" />
     <Compile Include="Clases\DO\CursoMateriaDO.cs" />
+    <Compile Include="Clases\DO\FiltroNotaDO.cs" />
     <Compile Include="Clases\DO\MateriasPorCursoDO.cs" />
     <Compile Include="Clases\DO\Notas.cs" />
     <Compile Include="Contexto\Entidades\Alumno.cs" />

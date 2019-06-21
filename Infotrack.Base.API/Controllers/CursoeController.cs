@@ -52,9 +52,9 @@ namespace Infotrack.Base.API.Controllers
 
         [HttpGet]
         [Route("ConsultarAlumnosCurso")]
-        public Respuesta<Models.CursoAlumno> GetAlumnosCurso(int id)
+        public Respuesta<Models.CursoAlumno> GetAlumnosCurso()
         {
-            return Mapeador.MapearObjetoPorJson<Respuesta<Models.CursoAlumno>>(NegocioCurso.Value.ObtenerAlumnosPorIdCurso(id));
+            return Mapeador.MapearObjetoPorJson<Respuesta<Models.CursoAlumno>>(NegocioCurso.Value.ObtenerAlumnosPorCurso());
         }
 
         [HttpGet]
